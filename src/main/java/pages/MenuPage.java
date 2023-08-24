@@ -15,6 +15,7 @@ public class MenuPage {
 	public By homeLink = By.linkText("HOME");
 	public By contactLink = By.linkText("CONTACTS");
 	public By loginLink = By.linkText("Login");
+	public By shopLink = By.linkText("BOOKS");
 	//metode specifice cu locatori sau elemente de mai sus
 	//metode specifice inseamna functionalitatea paginii in care ma aflu
 	public void navigateTo(By locator) {
