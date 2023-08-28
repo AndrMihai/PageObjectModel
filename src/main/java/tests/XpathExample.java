@@ -1,8 +1,12 @@
 package tests;
 
+import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 import utils.BaseTest;
@@ -49,6 +53,22 @@ public class XpathExample extends BaseTest {
 		driver.findElement(By.xpath("//a[contains(@href, 'profile.php')]")).click();
 		//WebElement  : <a href="https://keybooks.ro/account/orders/">recent orders</a>
 		driver.findElement(By.xpath("//a[contains(text(), 'orde')]")).click();
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		WebElement orderTableHeader =  driver.findElement(By.xpath("//th[contains(@class, 'woocommerce-orders-table__header' )]/span[contains(text(), 'Order')]"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background: orange;border:4px solid blue')", orderTableHeader);
+		//index based
+		// ---> (//th[contains(@class, 'woocommerce-orders-table__header')]/span)[4]
+		WebElement totalTableHeader = driver.findElement(By.xpath("(//th[contains(@class, 'woocommerce-orders-table__header')]/span)[4]"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background: orange;border:4px solid blue')", totalTableHeader);
+		
+		WebElement order1720 = driver.findElement(By.xpath("//td[contains(@class, 'woocommerce-orders-table__cell' )][@data-title='Order']/a[contains(text(), '1720')]"));
+		jse.executeScript("arguments[0].setAttribute('style', 'background: orange;border:4px solid blue')", order1720);
+		
+		//NOT
+		List<WebElement> orders = driver.findElements(By.xpath("//td[contains(@class, 'woocommerce-orders-table__cell' )][@data-title='Order']/a[not(contains(text(), '1720'))]"));
+		for(WebElement element : orders) {
+			jse.executeScript("arguments[0].setAttribute('style', 'background: yellow;border:4px solid red')", element);
+		}
 	}
 	
 	
