@@ -17,6 +17,7 @@ public class ShopPage {
 	public By orderDropdown = By.name("orderby");
 	public By priceSliderInitialPosition = By.xpath("//span[@style='left: 0%;']");
 	public By priceSliderFinalPosition = By.xpath("//span[@style='left: 100%;']");
+	public By priceSliderFinalMoved = By.xpath("//span[@style='left: 62.5%;']");
 	//metode
 	public void selectByValue(String value) {
 		WebElement dropdown = driver.findElement(orderDropdown);
@@ -37,7 +38,14 @@ public class ShopPage {
 		WebElement element = driver.findElement(locator);
 		Actions action = new Actions(driver);
 		action.moveToElement(element).clickAndHold(element).moveByOffset(x, y).release().perform();
-		
+		//action.dragAndDropBy(element, x, y).perform();
+		//action.dragAndDrop(element, element).perform();	
+	}
+	public void dragAndDropElement(By locator1,By locator2) {
+		WebElement element1 = driver.findElement(locator1);
+		WebElement element2 = driver.findElement(locator2);
+		Actions  action = new Actions(driver);
+		action.dragAndDrop(element1, element2).perform();
 	}
 	/**
 	 * Method that returns the value as String from the current selection of a dropdown
