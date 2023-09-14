@@ -26,4 +26,7 @@ public class SeleniumWrappers extends BaseTest {
 		Actions action = new Actions(driver);
 		action.scrollByAmount(x, y).perform();
 	}
+	public WebElement returnElement(By locator) {
+		return driver.findElement(locator);
+	}
 }
