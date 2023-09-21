@@ -18,6 +18,7 @@ public class MenuPage {
 	public By contactLink = By.linkText("CONTACTS");
 	public By loginLink = By.linkText("Login");
 	public By shopLink = By.linkText("BOOKS");
+	public By singleAuthorLink = By.linkText("SINGLE AUTHOR");
 	public By blogLink = By.linkText("BLOG");
 	public By aboutLink = By.linkText("ABOUT");
 	public By eventsLink = By.linkText("EVENTS");

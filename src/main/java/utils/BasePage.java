@@ -4,6 +4,7 @@ import pages.ContactsPage;
 import pages.EventsPage;
 import pages.LoginPage;
 import pages.MenuPage;
+import pages.ShippingAddressPage;
 import pages.ShopPage;
 import pages.SingleEventPage;
 
@@ -15,5 +16,6 @@ public class BasePage extends SeleniumWrappers {
 	public ShopPage shop = new ShopPage(driver);
 	public EventsPage events = new EventsPage(driver);
 	public SingleEventPage singleEvent = new SingleEventPage(driver);
+	public ShippingAddressPage shippingPage= new ShippingAddressPage(driver);
 
 }
