@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class MenuPage {
+import utils.SeleniumWrappers;
+
+public class MenuPage extends SeleniumWrappers{
 	
 	public WebDriver driver;
 	
@@ -33,6 +35,14 @@ public class MenuPage {
 		WebElement element = driver.findElement(locator);
 		Actions action = new Actions(driver);
 		action.moveToElement(element).perform();
+	}
+	public void search(String textToSearch) {
+		click(searchIcon);
+		sendKeys(searchInput, textToSearch);
+		click(searchIcon);
+		
+		
+		
 	}
 
 }
