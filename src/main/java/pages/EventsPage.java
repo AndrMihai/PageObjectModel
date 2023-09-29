@@ -17,5 +17,9 @@ public class EventsPage {
 		
 		driver.findElement(locator).click();
 	}
+	
+	public void navigateTo(By locator) {
+		driver.findElement(locator).click();
+	}
 
 }

@@ -15,6 +15,7 @@ public class SingleEventPage extends SeleniumWrappers{
 	}
 	public By mapLink = By.partialLinkText("map");
 	public By iframe = By.tagName("iframe");
+	
 	public void clickMap() {
 		WebElement element = driver.findElement(iframe);
 		driver.switchTo().frame(element);
