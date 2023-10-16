@@ -13,7 +13,7 @@ import utils.BaseTest;
 
 public class DropdownTest extends BaseTest {
 	
-	@Test(priority=1)
+	@Test(priority=1, groups = "ProductFunctionality")
 	public void selectByValueTest() {
 		MenuPage menu = new  MenuPage(driver);
 		menu.navigateTo(menu.shopLink);
@@ -21,7 +21,7 @@ public class DropdownTest extends BaseTest {
 		shop.selectByValue("price-desc");
 		assertEquals(shop.getSelectedOption(), "Sort by price: high to low");
 	}
-	@Test(priority=2)
+	@Test(priority=2, groups = "ProductFunctionality")
 	public void selectByVisibleTextTest() {
 		
 		MenuPage menu = new  MenuPage(driver);
@@ -30,7 +30,7 @@ public class DropdownTest extends BaseTest {
 		shop.selectByVisibileText("Sort by popularity");
 		assertEquals(shop.getSelectedOption(), "Sort by popularity");
 	}
-	@Test(priority=3)
+	@Test(priority=3, groups = "ProductFunctionality")
 	public void selectByIndexTest() {
 		
 		MenuPage menu = new  MenuPage(driver);
@@ -39,7 +39,7 @@ public class DropdownTest extends BaseTest {
 		shop.selectByIndex(3);
 		assertEquals(shop.getSelectedOption(), "Sort by latest");
 	}
-	@Test(priority=4)
+	@Test(priority=4, groups = "ProductFunctionality")
 	public void example() {
 		MenuPage menu = new  MenuPage(driver);
 		menu.navigateTo(menu.shopLink);

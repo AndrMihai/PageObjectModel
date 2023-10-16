@@ -26,6 +26,7 @@ public class MenuPage extends SeleniumWrappers{
 	public By eventsLink = By.linkText("EVENTS");
 	public By searchIcon = By.cssSelector("button[class*='search_submit']");
 	public By searchInput = By.cssSelector("input[class='search_field']");
+	public By postFormats = By.linkText("Post Formats");
 	//metode specifice cu locatori sau elemente de mai sus
 	//metode specifice inseamna functionalitatea paginii in care ma aflu
 	public void navigateTo(By locator) {

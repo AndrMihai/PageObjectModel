@@ -10,7 +10,7 @@ import utils.BaseTest;
 
 public class LoginTest extends BaseTest {
 	
-	@Test(priority=1)
+	@Test(priority=1, groups = "LoginFunctionality")
 	public void validLoginTest() throws InterruptedException {
 		MenuPage menu = new MenuPage(driver);
 		//menu.navigateTo(menu.contactLink);
@@ -22,7 +22,7 @@ public class LoginTest extends BaseTest {
 		Thread.sleep(5000);
 		login.logoutFromApp();
 	}
-	@Test(priority=2)
+	@Test(priority=2, groups = "LoginFunctionality")
 	public void invalidLoginTest() throws InterruptedException {
 		MenuPage menu = new MenuPage(driver);
 		//menu.navigateTo(menu.contactLink);

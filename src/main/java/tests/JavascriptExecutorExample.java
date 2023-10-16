@@ -111,8 +111,7 @@ public class JavascriptExecutorExample extends BaseTest{
 				+ "window.schimbTitlulPaginii.call();");
 		
 		System.out.println("Dupa functia JS : " + driver.getTitle());
-		
-		
+	
 		//alternativa pentru hover
 		
 		String javascriptHover = "var obiect = document.createEvent('MouseEvent');" + "obiect.initMouseEvent('mouseover', true);" + "arguments[0].dispatchEvent(obiect);";

@@ -11,7 +11,7 @@ public class BaseTest {
 	public static WebDriver driver;
 	public BasePage app;
 	
-	@BeforeClass
+	@BeforeMethod
 	public void setup() {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -22,7 +22,7 @@ public class BaseTest {
 		app = new BasePage();
 	}
 
-	@AfterClass
+	@AfterMethod
 	public void tearDown() throws InterruptedException {
 		Thread.sleep(4000); //bad practice
 		//driver.close();
